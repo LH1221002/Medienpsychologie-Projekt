@@ -10,8 +10,8 @@ public class percentageCalculation : MonoBehaviour
         Introvert
     } // Add more if necessary
 
-    private float scoreExtrovert { get; set; }
-    private float scoreIntrovert { get; set; }
+    public float scoreExtrovert { get; set; }
+    public float scoreIntrovert { get; set; }
     public int maxScore { get; set; }
     public int pointsPerLike { get; set; }
     public float percentageExtrovert { get; set; }
@@ -19,13 +19,13 @@ public class percentageCalculation : MonoBehaviour
 
     public State state;
 
-    private void setState()
+    public void setState()
     {
         if (percentageExtrovert > percentageIntrovert) state = State.Extrovert;
         else state = State.Introvert;
     }
 
-    private void calculateStuff() {
+    public void calculateStuff() {
         //TODO: Score calculations
 
         percentageExtrovert = scoreExtrovert / maxScore;
