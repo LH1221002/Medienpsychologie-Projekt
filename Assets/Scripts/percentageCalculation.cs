@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class percentageCalculation : MonoBehaviour
 {
-    enum State
+    public enum State
     {
         Extrovert,
         Introvert
     } // Add more if necessary
+
+    public enum LikeType
+    {
+        ExtrovertLike,
+        IntrovertLike
+    }
 
     public float scoreExtrovert { get; set; }
     public float scoreIntrovert { get; set; }
@@ -35,6 +41,21 @@ public class percentageCalculation : MonoBehaviour
 
     public void showAd() { 
         //TODO: show corresponding ad
+    }
+
+    public void incrementScore(LikeType likeType)
+    {
+        switch (likeType)
+        {
+            case LikeType.ExtrovertLike:
+                scoreExtrovert += pointsPerLike;
+                break;
+            case LikeType.IntrovertLike:
+                scoreIntrovert += pointsPerLike;
+                break;
+            default:
+                break;
+        }
     }
 
 }
