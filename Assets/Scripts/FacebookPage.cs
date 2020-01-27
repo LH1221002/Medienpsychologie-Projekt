@@ -7,12 +7,19 @@ public class FacebookPage : MonoBehaviour
     public User.Categories cat;
     public float percentage;
     public GameObject likeImage;
+    public GameObject background;
     private bool liked;
+
+    public void Start()
+    {
+        background.SetActive(true);
+    }
 
     public void touch()      
     {
         liked = !liked;
         likeImage.SetActive(liked);
+        background.SetActive(!liked);
     }
 
     public void sendResult()
